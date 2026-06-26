@@ -35,7 +35,7 @@
       </div>
     </section>
     <section class="w-full flex items-center h-full gap-4">
-      <div class="card bg-[url(./todo.avif)] flex-grow-1 rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
+      <div id="one" class="card bg-[url(./todo.avif)] flex-grow-1 rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
         <p class="text-shadow-lg">ToDo List</p>
       </div>
       <div class="card bg-[url(./daily.avif)] flex-grow-1 rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
@@ -52,8 +52,8 @@
        </div>
     </section>
     </main>
-    <main class="w-full h-screen bg-red-800 min-h-screen hidden absolute top-0 left-0 p-5 text-white h-fit font-[gilroy] flex items-start justify-between gap-x-3  py-18">
-      <button class="px-3 py-2 bg-red-700 text-white absolute top-3 right-3 cursor-pointer active:scale-95 rounded">Close</button>
+    <main id="toDo" class="w-full h-screen bg-red-800 min-h-screen hidden absolute top-0 left-0 p-5 text-white h-fit font-[gilroy] flex items-start justify-between gap-x-3  py-18">
+      <button id="toDoClose" class="px-3 py-2 bg-red-700 text-white absolute top-3 right-3 cursor-pointer active:scale-95 rounded">Close</button>
       <div class="right flex-grow-1 h-89  border rounded p-3 w-1/2">
         <form id="todoForm" class="flex flex-col gap-y-2   items-start justify-between">
           <input class="w-full h-10 rounded border-0 outline-0 px-3 bg-red-500" type="text" placeholder="Enter Title">
