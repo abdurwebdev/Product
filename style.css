@@ -1,0 +1,19 @@
+main[data-theme="light"]{
+  background-color: white;
+  color: black;
+}
+main[data-theme="dark"]{
+  background-color: black;
+  color: white;
+}
+main[data-theme="cyber-light"]{
+  background-color: #f0f4f8;
+  color: #2b0032;
+  border-color: #ff007f;
+}
+
+main[data-theme="cyber-dark"]{
+  background-color: #1a1a2e;
+  color: #00f5ff;      
+  border-color: #ff007f;
+}

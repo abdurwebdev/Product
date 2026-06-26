@@ -8,121 +8,148 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <main class="w-full h-screen bg-black text-white px-5 py-3 flex items-center flex-col gap-y-4">
-    <header class="w-full h-12  font-[gilroy] flex items-center justify-between">
-      <h1>Productivity Dashboard</h1>
-      <button class="px-3 py-2 bg-red-500 text-white rounded-xl cursor-pointer active:scale-99">Change Theme</button>
+<body class="bg-black text-zinc-100 font-['gilroy',sans-serif] antialiased">
+
+  <main id="main" class="w-full min-h-screen px-6 py-6 flex flex-col gap-6 max-w-7xl mx-auto transition-colors duration-300">
+    
+    <header class="w-full h-16 flex items-center justify-between border-b border-zinc-800 pb-4">
+      <h1 class="text-xl font-bold tracking-tight   bg-clip-text ">Productivity Dashboard</h1>
+      <button id="themeButton" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm rounded-lg transition-all active:scale-[0.98] shadow-lg shadow-blue-600/10 cursor-pointer">
+        Change Theme
+      </button>
     </header>
-    <section class="w-full h-70 border bg-[url(./main.avif)] bg-cover rounded-xl p-5 flex items-between justify-between">
-      <div class="left flex items-between justify-between flex-col">
+
+    <section class="w-full min-h-[18rem] bg-[linear-gradient(to_bottom,rgba(0,0,0,0.3),rgba(0,0,0,0.7)),url('./main.avif')] bg-cover bg-center rounded-2xl p-8 flex flex-col sm:flex-row justify-between gap-6 shadow-2xl border border-zinc-800/50">
+      <div class="flex flex-col justify-between h-full min-h-[12rem]">
         <div>
-          <h6>25 June,2026</h6>
-        <h1 class="font-bold text-4xl text-shadow-black">Sunday, 12:27:28 AM</h1>
+          <h6 class="text-sm font-medium text-zinc-300/80 tracking-wider uppercase">25 June, 2026</h6>
+          <h1 class="font-bold text-4xl text-white sm:text-5xl mt-1 tracking-tight drop-shadow-md">Sunday, 12:27:28 AM</h1>
         </div>
-        <p>Rawalpindi, Islamabd</p>
+        <p class="text-zinc-300 text-sm font-medium flex items-center gap-1">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Rawalpindi, Islamabad
+        </p>
       </div>
-       <div class="left flex items-between justify-between flex-col">
+      
+      <div class="flex flex-col justify-between h-full min-h-[12rem] items-start sm:items-end text-left sm:text-right">
         <div>
-          <h6 class="font-bold text-4xl text-shadow-black">20&degC</h6>
-        <h1>Light Rain</h1>
+          <h6 class="font-extrabold text-5xl text-white tracking-tighter drop-shadow-md">20&deg;C</h6>
+          <h1 class="text-lg font-medium text-zinc-200 mt-1">Light Rain</h1>
         </div>
-        <div>
-          <p>Precipitation:30%</p>
-        <p>Humidity:40%</p>
-        <p>Wind:90%</p>
+        <div class="text-xs space-y-1 text-zinc-300 bg-black/30 backdrop-blur-md p-3 rounded-xl border border-white/10">
+          <p><span class="text-zinc-400">Precipitation:</span> 30%</p>
+          <p><span class="text-zinc-400">Humidity:</span> 40%</p>
+          <p><span class="text-zinc-400">Wind:</span> 90%</p>
         </div>
       </div>
     </section>
-    <section class="w-full flex items-center h-full gap-4">
-      <div id="one" class="card bg-[url(./todo.avif)] flex-grow-1 rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
-        <p class="text-shadow-lg">ToDo List</p>
+
+    <section class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 min-h-[12rem]">
+      
+      <div id="one" class="group relative overflow-hidden rounded-xl h-48 border border-zinc-800 bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.2)),url('./todo.avif')] bg-cover bg-center flex items-end p-5 cursor-pointer transition-all hover:-translate-y-1 hover:border-zinc-700 active:scale-[0.98]">
+        <p class="text-lg font-bold text-white tracking-wide group-hover:text-blue-400 transition-colors">ToDo List</p>
       </div>
-      <div class="card bg-[url(./daily.avif)] flex-grow-1 rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
-        <p class="text-shadow-lg">Daily Planner</p>
+
+      <div id="dailyPlanner" class="group relative overflow-hidden rounded-xl h-48 border border-zinc-800 bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.2)),url('./daily.avif')] bg-cover bg-center flex items-end p-5 cursor-pointer transition-all hover:-translate-y-1 hover:border-zinc-700 active:scale-[0.98]">
+        <p class="text-lg font-bold text-white tracking-wide group-hover:text-blue-400 transition-colors">Daily Planner</p>
       </div>
-      <div class="card bg-[url(./goal.avif)] flex-grow-1 rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
-        <p class="text-shadow-lg">Daily Goals</p>
+
+      <div id="dailyGoals" class="group relative overflow-hidden rounded-xl h-48 border border-zinc-800 bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.2)),url('./goal.avif')] bg-cover bg-center flex items-end p-5 cursor-pointer transition-all hover:-translate-y-1 hover:border-zinc-700 active:scale-[0.98]">
+        <p class="text-lg font-bold text-white tracking-wide group-hover:text-blue-400 transition-colors">Daily Goals</p>
       </div>
-      <div class="card flex-grow-1 bg-[url(./moti.avif)] rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
-        <p class="text-shadow-lg">Motivation</p>
+
+      <div id="pomodoro" class="group relative overflow-hidden rounded-xl h-48 border border-zinc-800 bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.2)),url('./moti.avif')] bg-cover bg-center flex items-end p-5 cursor-pointer transition-all hover:-translate-y-1 hover:border-zinc-700 active:scale-[0.98]">
+        <p class="text-lg font-bold text-white tracking-wide group-hover:text-blue-400 transition-colors">Motivation</p>
       </div>
-       <div class="card flex-grow-1 bg-[url(./pom.avif)] rounded-xl h-full flex items-end justify-end px-4 font-bold cursor-pointer active:scale-99 text-xl">
-        <p class="text-shadow-lg">Future Goals</p>
-       </div>
+
+      <div class="group relative overflow-hidden rounded-xl h-48 border border-zinc-800 bg-[linear-gradient(to_top,rgba(0,0,0,0.9),rgba(0,0,0,0.2)),url('./pom.avif')] bg-cover bg-center flex items-end p-5 cursor-pointer transition-all hover:-translate-y-1 hover:border-zinc-700 active:scale-[0.98]">
+        <p class="text-lg font-bold tracking-wide group-hover:text-blue-400 transition-colors">Future Goals</p>
+      </div>
+
     </section>
-    </main>
-    <main id="toDo" class="w-full h-screen bg-red-800 min-h-screen hidden absolute top-0 left-0 p-5 text-white h-fit font-[gilroy] flex items-start justify-between gap-x-3  py-18">
-      <button id="toDoClose" class="px-3 py-2 bg-red-700 text-white absolute top-3 right-3 cursor-pointer active:scale-95 rounded">Close</button>
-      <div class="right flex-grow-1 h-89  border rounded p-3 w-1/2">
-        <form id="todoForm" class="flex flex-col gap-y-2   items-start justify-between">
-          <input class="w-full h-10 rounded border-0 outline-0 px-3 bg-red-500" type="text" placeholder="Enter Title">
-            <textarea class=" h-10 w-full rounded h-40 resize-none border-0 outline-0 px-3 bg-red-500" type="text" placeholder="Enter Title"></textarea>
-            <input type="checkbox" >
-            <button class="w-full px-2 py-3 bg-red-500 rounded active:scale-95 cursor-pointer" type="submit">Create Task</button>
+  </main>
+
+  <main id="toDo" class="fixed inset-0 bg-black/90 backdrop-blur-lg hidden z-50 p-6 overflow-y-auto">
+    <div class="max-w-6xl mx-auto w-full pt-16 flex flex-col md:flex-row gap-6 h-full items-stretch">
+      <button id="toDoClose" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium absolute top-6 right-6 transition-all active:scale-95 rounded-lg border border-zinc-700 cursor-pointer">Close</button>
+      
+      <div class="w-full md:w-1/2 bg-zinc-950 border border-zinc-800 rounded-xl p-6 shadow-xl flex flex-col justify-center">
+        <form id="todoForm" class="flex flex-col gap-4">
+          <h2 class="text-xl font-bold tracking-tight text-white mb-2">Create New Task</h2>
+          <input class="w-full h-11 rounded-lg border border-zinc-800 bg-zinc-900 px-4 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" type="text" placeholder="Enter Title">
+          <textarea class="w-full h-32 rounded-lg border border-zinc-800 bg-zinc-900 p-4 text-white placeholder-zinc-500 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all" placeholder="Enter Task Details..."></textarea>
+          
+          <div class="flex items-center gap-2 py-1">
+            <input type="checkbox" id="urgentCheckbox" class="w-4 h-4 rounded text-blue-600 bg-zinc-900 border-zinc-800 focus:ring-blue-500 focus:ring-offset-zinc-950">
+            <label for="urgentCheckbox" class="text-sm text-zinc-400 select-none cursor-pointer">Mark as high priority</label>
+          </div>
+          
+          <button class="w-full h-11 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg transition-all active:scale-[0.98] shadow-lg shadow-blue-600/10 cursor-pointer mt-2" type="submit">Create Task</button>
         </form>
       </div>
-      <div class="left flex-grow-1 bg-purple-500 w-1/2 rounded overflow-y-auto max-h-98">
-        <div class="w-full px-2 py-3 flex flex-col gap-y-2">
-           <div class="task-one w-full h-15 bg-yellow-300 rounded px-3 flex gap-x-2 items-center justify-between">
-            <h1>Make the Full UI.</h1>
-            <button class="px-3 py-2 bg-green-400">Mark as completed</button>
-           </div>
-            <div class="task-one w-full h-15 bg-yellow-300 rounded px-3 flex gap-x-2 items-center justify-between">
-            <h1>Make the Full UI.</h1>
-            <button class="px-3 py-2 bg-green-400">Mark as completed</button>
-           </div>
-            <div class="task-one w-full h-15 bg-yellow-300 rounded px-3 flex gap-x-2 items-center justify-between">
-            <h1>Make the Full UI.</h1>
-            <button class="px-3 py-2 bg-green-400">Mark as completed</button>
-           </div>
-            <div class="task-one w-full h-15 bg-yellow-300 rounded px-3 flex gap-x-2 items-center justify-between">
-            <h1>Make the Full UI.</h1>
-            <button class="px-3 py-2 bg-green-400">Mark as completed</button>
-           </div>
-            <div class="task-one w-full h-15 bg-yellow-300 rounded px-3 flex gap-x-2 items-center justify-between">
-            <h1>Make the Full UI.</h1>
-            <button class="px-3 py-2 bg-green-400">Mark as completed</button>
-           </div>
+
+      <div class="w-full md:w-1/2 bg-zinc-950 border border-zinc-800 rounded-xl p-6 shadow-xl flex flex-col">
+        <h2 class="text-xl font-bold tracking-tight text-white mb-4">Active Tasks</h2>
+        <div class="flex-1 overflow-y-auto max-h-[26rem] pr-1 space-y-3">
+          <div class="task-one w-full bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-4 flex items-center justify-between gap-4 hover:border-zinc-700 transition-all">
+            <h1 class="font-medium text-zinc-200 text-sm">Make the Full UI.</h1>
+            <button class="px-3 py-1.5 bg-emerald-600/10 text-emerald-400 hover:bg-emerald-600 hover:text-white border border-emerald-500/20 text-xs font-semibold rounded-lg transition-all cursor-pointer">Mark as completed</button>
+          </div>
+          <div class="task-one w-full bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-4 flex items-center justify-between gap-4 hover:border-zinc-700 transition-all">
+            <h1 class="font-medium text-zinc-200 text-sm">Make the Full UI.</h1>
+            <button class="px-3 py-1.5 bg-emerald-600/10 text-emerald-400 hover:bg-emerald-600 hover:text-white border border-emerald-500/20 text-xs font-semibold rounded-lg transition-all cursor-pointer">Mark as completed</button>
+          </div>
+          <div class="task-one w-full bg-zinc-900/50 border border-zinc-800/80 rounded-xl p-4 flex items-center justify-between gap-4 hover:border-zinc-700 transition-all">
+            <h1 class="font-medium text-zinc-200 text-sm">Make the Full UI.</h1>
+            <button class="px-3 py-1.5 bg-emerald-600/10 text-emerald-400 hover:bg-emerald-600 hover:text-white border border-emerald-500/20 text-xs font-semibold rounded-lg transition-all cursor-pointer">Mark as completed</button>
+          </div>
         </div>
       </div>
-    </main>
-     <main class="w-full max-h-fit absolute top-0 left-0 hidden bg-blue-500 flex gap-3  py-18">
-      <button class="px-3 py-2 bg-red-700 text-white absolute top-3 right-3 cursor-pointer active:scale-95 rounded">Close</button>
-      <div class="right w-1/2 p-3 h-98 bg-red-500 flex-col gap-y-3 flex">
-        <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-          <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-            <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-              <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                  <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                    <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                     
-      </div>
-       <div class="right w-1/2 p-3 h-98 bg-red-500 flex-col gap-y-3 flex">
-        <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-          <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-            <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-              <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                  <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                    <input class="px-3 py-2 w-full bg-yellow-400 rounded border-0 outline-none" type="text">
-                     
-      </div>
-    </main>
-   <main class="w-full py-18 min-h-screen hidden bg-blue-500 flex gap-3 absolute top-0 items-center justify-center ">
-    <button class="px-3 py-2 bg-red-700 text-white absolute top-3 right-3 cursor-pointer active:scale-95 rounded">Close</button>
-    <h1 class="text-3xl text-white">If you think you can,If you think you cant then probably you are right</h1>
-   </main>
-    <main class="w-full min-h-screen bg-blue-300 flex gap-3 hidden absolute top-0 left-0 flex-col items-center justify-center ">
-      <button class="px-3 py-2 bg-red-700 text-white absolute top-3 right-3 cursor-pointer active:scale-95 rounded">Close</button>
-    <h1 class="text-3xl text-white">22:00</h1>
-    <div>
-      <button class="px-3 py-2 bg-red-400 text-white rounded cursor-pointer active:scale-95">Start Timer</button>
-     <button class="px-3 py-2 bg-red-400 text-white rounded cursor-pointer active:scale-95">Pause Timer</button>
-     <button class="px-3 py-2 bg-red-400 text-white rounded cursor-pointer active:scale-95">Reset Timer</button>
     </div>
-   </main>
+  </main>
+
+  <main id="dailyPlannerToOpen" class="fixed inset-0 bg-black/90 backdrop-blur-lg hidden z-50 p-6 items-center justify-center overflow-y-auto">
+    <div class="max-w-4xl mx-auto w-full pt-16 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <button id="toClosePlan" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium absolute top-6 right-6 transition-all active:scale-95 rounded-lg border border-zinc-700 cursor-pointer">Close</button>
+      
+      <div class="bg-zinc-950 border border-zinc-800 p-6 rounded-xl space-y-3">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="08:00 AM Task...">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="10:00 AM Task...">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="12:00 PM Task...">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="02:00 PM Task...">
+      </div>
+      
+      <div class="bg-zinc-950 border border-zinc-800 p-6 rounded-xl space-y-3">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="04:00 PM Task...">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="06:00 PM Task...">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="08:00 PM Task...">
+        <input class="px-4 py-2.5 w-full bg-zinc-900 rounded-lg border border-zinc-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all text-sm" type="text" placeholder="10:00 PM Task...">
+      </div>
+    </div>
+  </main>
+
+  <main id="dailyGoalsToOpen" class="fixed inset-0 bg-black/90 backdrop-blur-lg hidden z-50 p-6 flex items-center justify-center text-center">
+    <button id="dailyGoalsToClose" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium absolute top-6 right-6 transition-all active:scale-95 rounded-lg border border-zinc-700 cursor-pointer">Close</button>
+    <div class="max-w-2xl px-4">
+      <span class="text-xs uppercase font-semibold text-blue-500 tracking-widest block mb-3">Daily Reflection</span>
+      <h1 class="text-3xl md:text-4xl font-bold leading-snug tracking-tight">"If you think you can, or if you think you can't, then probably you are right."</h1>
+    </div>
+  </main>
+
+  <main id="pomodoroToOpen" class="fixed inset-0 bg-black/90 backdrop-blur-lg hidden z-50 p-6 flex flex-col items-center justify-center">
+    <button id="pomodoroToClose" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-sm font-medium absolute top-6 right-6 transition-all active:scale-95 rounded-lg border border-zinc-700 cursor-pointer">Close</button>
+    
+    <div class="text-center space-y-6 max-w-sm w-full bg-zinc-950 p-8 rounded-2xl border border-zinc-800 shadow-2xl">
+      <span class="text-xs uppercase font-semibold text-rose-500 tracking-widest block">Focus Session</span>
+      <h1 class="text-6xl font-extrabold text-white tracking-tighter tabular-nums my-4">22:00</h1>
+      
+      <div class="grid grid-cols-3 gap-2 pt-2">
+        <button class="px-2 py-2.5 text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all active:scale-95 shadow-md shadow-blue-600/10 cursor-pointer">Start</button>
+        <button class="px-2 py-2.5 text-xs font-semibold bg-zinc-800 hover:bg-zinc-700 text-zinc-300 rounded-lg transition-all active:scale-95 border border-zinc-700 cursor-pointer">Pause</button>
+        <button class="px-2 py-2.5 text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 text-rose-400 rounded-lg transition-all active:scale-95 border border-zinc-800 cursor-pointer">Reset</button>
+      </div>
+    </div>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
