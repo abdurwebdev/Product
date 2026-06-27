@@ -1,3 +1,10 @@
+@font-face {
+  font-family: one;
+  src: url(./Gilroy-FREE/Gilroy-ExtraBold.otf);
+}
+*{
+  font-family: one;
+}
 main[data-theme="light"]{
   background-color: white;
   color: black;
@@ -16,4 +23,7 @@ main[data-theme="cyber-dark"]{
   background-color: #1a1a2e;
   color: #00f5ff;      
   border-color: #ff007f;
+}
+#futureGoalsPage::-webkit-scrollbar{
+  display: none;
 }
